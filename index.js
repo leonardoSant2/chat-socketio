@@ -9,10 +9,6 @@ io.on("connection", (socket) => {
     socket.on("disconnect", () => {
         console.log("X desconectou: " + socket.id)
     })
-    socket.on("palavra", (data) => {
-        console.log(data);
-        socket.emit("resultado", data + " - Chat com Socket.io")
-    })
 })
 
 app.set("view engine", "ejs");

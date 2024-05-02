@@ -7,11 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" id="palavra" oninput="enviar()">
-    <button>Enviar</button>
-    <hr>
-    <p id="resultado"></p>
-    
+    <h1>Chat Socket.io</h1>
+    <div id="chat">
+
+    </div>
+    <input type="text" name="" id="msg"><br>
+    <input type="text" name="" id="username" placeholder="Nome do usuário">
+    <button onclick="enviar()">Enviar</button>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"></script>
 <script>
@@ -22,8 +24,10 @@
     })
 
     function enviar() {
-        var inputValue = document.getElementById("palavra").value;
-        socket.emit("palavra", inputValue)
+        var msg = document.getElementById("msg").value;
+        var username = document.getElementById("username").value;
+
+        socket.emit("msg", {msg: msg, username: username})
         
     }
 </script>
