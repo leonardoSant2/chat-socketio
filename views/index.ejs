@@ -24,7 +24,7 @@
     })
 
     function enviar() {
-        var msg = document.getElementById("msg").value;
+        var msg= document.getElementById("msg").value;
         var username = document.getElementById("username").value;
 
         socket.emit("msg", {msg: msg, username: username})
