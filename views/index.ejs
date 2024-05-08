@@ -4,16 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Document</title>
 </head>
+<style>
+    #chat{
+        max-height: 500px;
+        min-height: 500px;
+        background-color: aliceblue;
+        overflow-y: scroll;
+    }
+
+    #msg, #username{
+        width: 600px;
+    }
+
+     .mb-3{
+        width: 600px;
+     }
+    button{
+        width: 200px;
+        float: right;
+    }
+</style>
 <body>
     <h1>Chat Socket.io</h1>
     <div id="chat">
 
     </div>
-    <input type="text" name="" id="msg"><br>
-    <input type="text" name="" id="username" placeholder="Nome do usuário">
-    <button onclick="enviar()">Enviar</button>
+    <div class="mb-3">
+        <label for="username" class="form-label">Nome do usuário</label>
+            <input type="text" name="" id="username" class="form-control" placeholder="Nome do usuário"><br>
+    </div>
+    <div class="mb-3">
+        <label for="msg" class="form-label">Mensagem</label>
+            <textarea id="msg" rows="5" class="form-control"></textarea><br>
+                <button onclick="enviar()" class="btn btn-primary">Enviar</button>
+    </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"></script>
 <script>
